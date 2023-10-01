@@ -751,14 +751,6 @@ void IVP_Environment::merge_objects(IVP_U_Vector<IVP_Real_Object> *objs_to_merge
 	}
 	P_FREE( merge_all_objs.cores );
 }
-// needed for sun to initialize templates classes
-void ivp_dummy_func(){
-    IVP_U_Set_Active<IVP_Core> ivp_class_dummy1(16);
-    IVP_U_Set_Active<IVP_Real_Object> ivp_class_dummy2(16);
-    IVP_U_Set_Active<IVP_Mindist_Base> ivp_class_dummy3(16);
-    IVP_Attacher_To_Cores<IVP_Controller_Buoyancy> *ivp_class_dummy8 = new IVP_Attacher_To_Cores<IVP_Controller_Buoyancy>(NULL);
-    ivp_class_dummy8 = ivp_class_dummy8;
-}
 
 void IVP_Time_Event_D::simulate_time_event(IVP_Environment *env) {
 #if 1
