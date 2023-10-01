@@ -19,12 +19,9 @@ inline int IVV_Cluster_Min_Hash::hash_index(const char *key)const{
 
 IVV_Cluster_Min_Hash::IVV_Cluster_Min_Hash(int sizei){
     size = sizei;
-    int i;
-    for (i=0;i<32;i++){
-	if ( (1<<i) == sizei) break;
-    }
-    IVP_ASSERT (i!=32); // must be power 2
-    
+
+    IVP_ASSERT(sizei % 2 == 0) // must be power 2
+
     elems = (IVV_Cluster_Min_Hash_Elem **)p_calloc(sizeof(void *),size);
     stadel = (IVV_Cluster_Min_Hash_Elem **)p_calloc(sizeof(void *),size*2);
     min_per_array_pos = stadel + size;
