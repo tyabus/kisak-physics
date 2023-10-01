@@ -35,7 +35,7 @@ public:
     IVP_U_Point vec2;
     
     IVP_U_Plain(const IVP_U_Hesse *hesse);
-    IVP_U_Plain(const IVP_U_Point *p1,const IVP_U_Point *p2,const IVP_U_Point *p3);
+    IVP_U_Plain(const IVP_U_Point *p0,const IVP_U_Point *p1,const IVP_U_Point *p2);
 
     IVP_RETURN_TYPE calc_intersect_with(const IVP_U_Hesse *plane2, IVP_U_Straight *straight_out) const;    
 };

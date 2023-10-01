@@ -91,7 +91,7 @@ public:
     inline IVP_DOUBLE get_closing_speed() const ;  // based on current core speed
     
     void do_impact_long_term(IVP_Core *pushed_cores[2], IVP_FLOAT rescue_speed_val, IVP_Contact_Point *cp); // returns 0 if O.K. , returns 1 if false impact
-    static IVP_Core *find_second_critical_impact_core(IVP_Core *core1,IVP_Core *core0);
+    static IVP_Core *find_second_critical_impact_core(IVP_Core *core0,IVP_Core *core1);
     
     // the real start of an impact
     static void do_impact_of_two_objects(IVP_Mindist *mindist, IVP_Real_Object *obj0,IVP_Real_Object *obj1);
